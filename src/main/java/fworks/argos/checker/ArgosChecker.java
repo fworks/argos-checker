@@ -1,7 +1,7 @@
+package fworks.argos.checker;
 
 
 import java.io.IOException;
-
 import com.google.api.client.http.GenericUrl;
 import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestFactory;
@@ -11,24 +11,24 @@ import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.JsonObjectParser;
-import com.google.api.client.json.jackson.JacksonFactory;
-import com.test.argos.ProductStockStatus;
-import com.test.argos.Store;
-import com.test.argos.StoreList;
+import com.google.api.client.json.jackson2.JacksonFactory;
+import fworks.argos.checker.model.Store;
+import fworks.argos.checker.model.StoreList;
 
 
-public class test {
+public class ArgosChecker {
 
-	static final HttpTransport HTTP_TRANSPORT = new NetHttpTransport();
-	static final JsonFactory JSON_FACTORY = new JacksonFactory();
-	static HttpRequestFactory requestFactory = HTTP_TRANSPORT.createRequestFactory(new HttpRequestInitializer() {
+	private static final HttpTransport HTTP_TRANSPORT = new NetHttpTransport();
+	private static final JsonFactory JSON_FACTORY = new JacksonFactory();
+	
+	private static HttpRequestFactory requestFactory = HTTP_TRANSPORT.createRequestFactory(new HttpRequestInitializer() {
 		
 		public void initialize(HttpRequest request) {
 			request.setParser(new JsonObjectParser(JSON_FACTORY));
 		}
 	});
 	
-	static String productCode = "4984490";
+	private static String productCode = "4984490";
 
 	public static void main(String[] args) {
 		try {

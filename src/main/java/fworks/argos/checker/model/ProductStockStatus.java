@@ -1,6 +1,5 @@
-package com.test.argos;
+package fworks.argos.checker.model;
 
-import com.google.api.client.json.JsonString;
 import com.google.api.client.util.Key;
 
 public class ProductStockStatus {

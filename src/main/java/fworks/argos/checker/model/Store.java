@@ -1,4 +1,4 @@
-package com.test.argos;
+package fworks.argos.checker.model;
 
 import com.google.api.client.util.Key;
 
